@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React from "react";
 import "./index.css";
 import { createServer } from "miragejs";
 import { AppProvider } from "./config";
 
-let server = createServer({
+const server = createServer({
   routes() {
     this.namespace = "api";
     this.get("/users", () => {
