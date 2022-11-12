@@ -1,19 +1,11 @@
 import React from "react";
 import "./index.css";
-import { createServer } from "miragejs";
 import { AppProvider } from "./config";
+import { makeServer } from "./config/server";
 
-const server = createServer({
-  routes() {
-    this.namespace = "api";
-    this.get("/users", () => {
-      return [
-        { id: 1, name: "Bob" },
-        { id: 2, name: "Alice" },
-      ];
-    });
-  },
-});
+if (process.env.NODE_ENV === "development") {
+  makeServer({ environment: "development" });
+}
 
 function App() {
   return <AppProvider />;

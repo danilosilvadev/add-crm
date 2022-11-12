@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import styled from "styled-components";
+import { request } from "../../../config/axiosConfig";
 import { CenterVertical } from "../../../config/helpers/Center";
 
 const theme = {
@@ -13,6 +15,12 @@ const theme = {
 };
 
 export const Dashboard = () => {
+  useEffect(() => {
+    request.get("/lead/123").then((res) => {
+      console.log(res);
+    });
+  }, []);
+
   return (
     <CenterVertical>
       <BG>
@@ -20,15 +28,15 @@ export const Dashboard = () => {
           <h1>Validate the lead</h1>
           <Label htmlFor="name">
             Name:
-            <Input type="text" value="" name="name" />
+            <Input type="text" name="name" />
           </Label>
           <Label htmlFor="email">
             E-mail:
-            <Input type="text" value="" name="email" />
+            <Input type="text" name="email" />
           </Label>
           <Label htmlFor="nationalId">
             National ID:
-            <Input type="text" value="" name="nationalId" />
+            <Input type="text" name="nationalId" />
           </Label>
           <Button type="submit">Submit</Button>
         </Form>
