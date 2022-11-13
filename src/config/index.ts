@@ -3,4 +3,5 @@ export { request } from "./axiosConfig";
 export { makeServer } from "./mock";
 export { theme } from "./theme";
 export type { ITheme, IColor, IStyledTheme } from "./theme";
-export type { ILead } from "./mock/types";
+export type { ILead, ILeadLegal } from "./mock/types";
+export { UserContext } from "./context";

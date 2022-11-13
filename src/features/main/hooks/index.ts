@@ -1,0 +1,1 @@
+export { useValidateLead } from "./useValidateLead";

@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { ILead, IStyledTheme } from "@config";
 import { Common } from "@common";
 import { requests } from "../services";
-import { errorMessagesSchema, leadFormSchema, validations } from "../helpers";
+import { handleValidations, leadFormSchema } from "../helpers";
+import { useValidateLead } from "../hooks";
 
 interface IForm {
   email: string;
@@ -12,10 +13,12 @@ interface IForm {
 }
 
 export const Dashboard = () => {
+  // form state
   const { register, handleSubmitForm, formData } = Common.useForm({
     schema: leadFormSchema,
   });
 
+  // api calls
   const [handleLeadService, leadResponse, leadError, leadLoading] =
     Common.useApi();
 
@@ -26,27 +29,14 @@ export const Dashboard = () => {
     leadLegalLoading,
   ] = Common.useApi();
 
+  // validations
+  const { handleValidations } = useValidateLead();
+
   useEffect(() => {
     if (leadResponse && leadLegalResponse) {
-      handleValidations();
+      handleValidations(leadResponse, leadLegalResponse, formData as ILead);
     }
   }, [leadResponse]);
-
-  const handleValidations = () => {
-    switch (true) {
-      case validations.identity(leadResponse, formData as ILead):
-        console.log("Identity is valid");
-        break;
-      case validations.legal(leadLegalResponse):
-        console.log("Legal is valid");
-        break;
-      case validations.score(leadResponse):
-        console.log("Score is valid");
-        break;
-      default:
-        console.log("Identity and Legal are invalid");
-    }
-  };
 
   const handleSubmit = (data: IForm | any) => {
     handleLeadService(requests.getLead(data.nationalId));
