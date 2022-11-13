@@ -5,7 +5,7 @@ import { features } from "../../features";
 
 const {
   main: {
-    screens: { Dashboard },
+    screens: { Dashboard, LeadStatus },
   },
 } = features;
 
@@ -14,6 +14,8 @@ export const Router = () => {
     <Center>
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="/lead-status" element={<LeadStatus />} />
+        <Route path="*" element={<div>Not Found</div>} />
       </Routes>
     </Center>
   );

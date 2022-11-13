@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useForm = ({ initialState = {}, schema = {} }: any) => {
-  const [formData, setFormData] = useState<{ [key: string]: string }>(
+  const [formData, setFormData] = useState<{ [key: string]: string | unknown }>(
     initialState
   );
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -18,14 +18,14 @@ export const useForm = ({ initialState = {}, schema = {} }: any) => {
     };
   };
 
-  const handleSubmitForm = (
+  const handleSubmitForm = async (
     callback: (formData: { [key: string]: string }) => void,
     event: React.FormEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
     setSubmitTouched(true);
     handleValidation();
-    if (Object.keys(errors).length === 0 && Object.keys(formData).length > 0) {
+    if (Object.keys(errors).length === 0 && Object.keys(formData).length > 2) {
       return callback(formData);
     }
   };

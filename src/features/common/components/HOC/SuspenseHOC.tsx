@@ -1,6 +1,7 @@
 import { Suspense } from "react";
+import { Spinner } from "../Spinner";
 
-const Fallback = () => <div>Loading...</div>;
+const Fallback = Spinner;
 
 interface IProps {
   loading: boolean;

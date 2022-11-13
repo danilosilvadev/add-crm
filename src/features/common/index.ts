@@ -5,6 +5,8 @@ import {
   Input,
   SuspenseHOC,
   ErrorBoundaryHOC,
+  Spinner,
+  DataFetchingHOC,
 } from "./components";
 import { useForm, useApi } from "./hooks";
 
@@ -17,4 +19,6 @@ export const Common = {
   Input,
   useForm,
   useApi,
+  Spinner,
+  DataFetchingHOC,
 };

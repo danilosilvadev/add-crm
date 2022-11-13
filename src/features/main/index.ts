@@ -1,7 +1,8 @@
-import { Dashboard } from "./screens";
+import { Dashboard, LeadStatus } from "./screens";
 
 export const main = {
   screens: {
     Dashboard,
+    LeadStatus,
   },
 };

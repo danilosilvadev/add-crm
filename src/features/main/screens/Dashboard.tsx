@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { IStyledTheme } from "@config";
+import { ILead, IStyledTheme } from "@config";
 import { Common } from "@common";
-import * as yup from "yup";
 import { requests } from "../services";
+import { errorMessagesSchema, leadFormSchema, validations } from "../helpers";
 
 interface IForm {
   email: string;
@@ -11,59 +11,78 @@ interface IForm {
   nationalId: string;
 }
 
-const schema = yup.object().shape({
-  name: yup
-    .string()
-    .min(5, "put at least 5 letters")
-    .required("Name is required"),
-  email: yup.string().email("Not valid email").required("Email is required"),
-  nationalId: yup
-    .number()
-    .min(3, "Put 3 numbers")
-    .required("National ID is required"),
-});
-
 export const Dashboard = () => {
-  const { register, handleSubmitForm, formData } = Common.useForm({ schema });
+  const { register, handleSubmitForm, formData } = Common.useForm({
+    schema: leadFormSchema,
+  });
 
   const [handleLeadService, leadResponse, leadError, leadLoading] =
     Common.useApi();
 
-  useEffect(() => {}, [leadResponse, leadError]);
+  const [
+    handleLeadLegalService,
+    leadLegalResponse,
+    leadLegalError,
+    leadLegalLoading,
+  ] = Common.useApi();
+
+  useEffect(() => {
+    if (leadResponse && leadLegalResponse) {
+      handleValidations();
+    }
+  }, [leadResponse]);
+
+  const handleValidations = () => {
+    switch (true) {
+      case validations.identity(leadResponse, formData as ILead):
+        console.log("Identity is valid");
+        break;
+      case validations.legal(leadLegalResponse):
+        console.log("Legal is valid");
+        break;
+      case validations.score(leadResponse):
+        console.log("Score is valid");
+        break;
+      default:
+        console.log("Identity and Legal are invalid");
+    }
+  };
 
   const handleSubmit = (data: IForm | any) => {
     handleLeadService(requests.getLead(data.nationalId));
+    handleLeadLegalService(requests.getLeadLegal(data.nationalId));
   };
 
   return (
     <Common.VCenter>
       <BG>
-        <Common.ErrorBoundaryHOC error={leadError}>
-          <Common.SuspenseHOC loading={leadLoading}>
-            <Form onSubmit={(e) => handleSubmitForm(handleSubmit, e)}>
-              <h1>Validate the lead</h1>
-              <Common.Input
-                register={register}
-                name="name"
-                label="Name:"
-                placeholder="Write your name here"
-              />
-              <Common.Input
-                register={register}
-                name="email"
-                label="Email:"
-                placeholder="Write your email here"
-              />
-              <Common.Input
-                register={register}
-                name="nationalId"
-                label="National ID:"
-                placeholder="Write your national ID here"
-              />
-              <Button type="submit">Submit</Button>
-            </Form>
-          </Common.SuspenseHOC>
-        </Common.ErrorBoundaryHOC>
+        <Common.DataFetchingHOC
+          loading={leadLoading && leadLegalLoading}
+          error={leadError && leadLegalError}
+        >
+          <Form onSubmit={(e) => handleSubmitForm(handleSubmit, e)}>
+            <h1>Validate the lead</h1>
+            <Common.Input
+              register={register}
+              name="name"
+              label="Name:"
+              placeholder="Write your name here"
+            />
+            <Common.Input
+              register={register}
+              name="email"
+              label="Email:"
+              placeholder="Write your email here"
+            />
+            <Common.Input
+              register={register}
+              name="nationalId"
+              label="National ID:"
+              placeholder="Write your national ID here"
+            />
+            <Button type="submit">Submit</Button>
+          </Form>
+        </Common.DataFetchingHOC>
       </BG>
     </Common.VCenter>
   );
@@ -92,7 +111,7 @@ const BG = styled.div`
 
 const Button = styled.button`
   display: block;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   width: 100%;
   background-color: ${({ theme }: IStyledTheme) => theme.colors.primary};
   color: ${({ theme }: IStyledTheme) => theme.colors.white};
@@ -100,6 +119,7 @@ const Button = styled.button`
   border-radius: 0.3rem;
   height: 2rem;
   font-size: 1.5rem;
+  cursor: pointer;
 `;
 
 // 1. Comparar o id e info pessoais no RG central

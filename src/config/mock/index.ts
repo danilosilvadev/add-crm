@@ -1,61 +1,38 @@
-import { Model, Response, createServer, Registry, Instantiate } from "miragejs"; // eslint-disable-line
-import { ModelDefinition } from "miragejs/-types"; // eslint-disable-line import/no-unresolved
-import Schema from "miragejs/orm/schema"; // eslint-disable-line import/no-unresolved
-import { ILead } from "./types";
-import { validations } from "./validations";
+/* eslint-disable */
+import { Model, createServer } from "miragejs";
+import { ModelDefinition } from "miragejs/-types";
+import Schema from "miragejs/orm/schema";
+import { getLead, getLeadLegal } from "./controllers";
+import { initialSeeds } from "./initialSeeds";
+// eslint enable
+import { ILead, ILeadLegal } from "./types";
 
-const LeadModel: ModelDefinition<ILead> = Model.extend({});
-type AppRegistry = Registry<
-  {
-    lead: typeof LeadModel;
-  },
-  any
->;
-type AppSchema = Schema<AppRegistry>;
+export const LeadModel: ModelDefinition<ILead> = Model.extend({});
+export const LeadLegalModel: ModelDefinition<ILeadLegal> = Model.extend({});
 
 export function makeServer({ environment = "test" } = {}) {
   const server = createServer({
     models: {
       lead: LeadModel,
+      leadLegal: LeadLegalModel,
     },
     seeds(server: any) {
-      server.create("lead", {
-        name: "Bob",
-        email: "bob@bob.com",
-        nationalId: "123",
-        score: 80,
+      initialSeeds.leads.forEach((lead: ILead) => {
+        server.create("lead", lead);
       });
-      server.create("lead", {
-        name: "Alice",
-        email: "alice@alice.com",
-        nationalId: "456",
-        score: 10,
+      initialSeeds.leadsLegal.forEach((leadLegal: ILeadLegal) => {
+        server.create("leadLegal", leadLegal);
       });
     },
     routes() {
+      // Basic config
       this.namespace = "api";
       this.timing = 1000;
       this.urlPrefix = "http://localhost:8080";
 
-      this.get("/lead/:nationalId", (schema: AppSchema, request) => {
-        const { nationalId } = request.params;
-        console.log(nationalId);
-        const lead: Instantiate<AppRegistry, "lead"> | null = schema.findBy(
-          "lead",
-          {
-            nationalId,
-          }
-        );
-        if (lead) {
-          return lead;
-        } else {
-          return new Response(
-            404,
-            { some: "header" },
-            { errors: ["Lead not found"] }
-          );
-        }
-      });
+      // routes
+      this.get("/lead/:nationalId", getLead);
+      this.get("/leadLegal/:nationalId", getLeadLegal);
     },
   });
 
