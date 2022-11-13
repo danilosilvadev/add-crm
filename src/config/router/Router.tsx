@@ -9,7 +9,7 @@ const {
   },
 } = features;
 
-export const RoutesStack = () => {
+export const Router = () => {
   return (
     <Center>
       <Routes>

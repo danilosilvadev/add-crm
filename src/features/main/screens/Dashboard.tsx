@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-import { request } from "../../../config/axiosConfig";
-import { CenterVertical } from "../../../config/helpers/Center";
+import { request } from "@config";
+import { Common } from "@common";
 
 const theme = {
   colors: {
@@ -22,7 +22,7 @@ export const Dashboard = () => {
   }, []);
 
   return (
-    <CenterVertical>
+    <Common.CenterVertical>
       <BG>
         <Form>
           <h1>Validate the lead</h1>
@@ -41,7 +41,7 @@ export const Dashboard = () => {
           <Button type="submit">Submit</Button>
         </Form>
       </BG>
-    </CenterVertical>
+    </Common.CenterVertical>
   );
 };
 

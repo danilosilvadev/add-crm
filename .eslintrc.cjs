@@ -27,5 +27,6 @@ module.exports = {
     // Add your own rules here to override ones from the extended configs.
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-empty-function": "off",
+    "import/no-unresolved": "off",
   },
 };

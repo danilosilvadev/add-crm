@@ -1,6 +1,6 @@
-import { Model, Response, createServer, Registry, Instantiate } from "miragejs";
+import { Model, Response, createServer, Registry, Instantiate } from "miragejs"; // eslint-disable-line
 import { ModelDefinition } from "miragejs/-types"; // eslint-disable-line import/no-unresolved
-import Schema from "miragejs/orm/schema";
+import Schema from "miragejs/orm/schema"; // eslint-disable-line import/no-unresolved
 import { ILead } from "./types";
 import { validations } from "./validations";
 
@@ -9,7 +9,7 @@ type AppRegistry = Registry<
   {
     lead: typeof LeadModel;
   },
-  {}
+  any
 >;
 type AppSchema = Schema<AppRegistry>;
 
@@ -35,6 +35,8 @@ export function makeServer({ environment = "test" } = {}) {
     routes() {
       this.namespace = "api";
       this.timing = 1000;
+      this.urlPrefix = "http://localhost:8080";
+
       this.get("/lead/:nationalId", (schema: AppSchema, request) => {
         const { nationalId } = request.params;
         console.log(nationalId);

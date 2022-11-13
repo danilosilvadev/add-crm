@@ -1,7 +1,6 @@
 import React from "react";
 import "./index.css";
-import { AppProvider } from "./config";
-import { makeServer } from "./config/server";
+import { AppProvider, makeServer } from "./config";
 
 if (process.env.NODE_ENV === "development") {
   makeServer({ environment: "development" });

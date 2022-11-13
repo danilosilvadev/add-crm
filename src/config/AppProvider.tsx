@@ -1,12 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
-import { UserProvider } from "./context/UserProvider";
-import { RoutesStack } from "./router/routes";
+import { UserProvider } from "./context";
+import { Router } from "./router";
 
 export const AppProvider = () => {
   return (
     <UserProvider>
       <BrowserRouter>
-        <RoutesStack />
+        <Router />
       </BrowserRouter>
     </UserProvider>
   );

@@ -11,6 +11,12 @@
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
+    "paths": {
+      "@config": ["./src/config"],
+      "@common": ["./src/features/common"],
+      "@main": ["./src/features/main"],
+      "@auth": ["./src/features/auth"]
+    },
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
