@@ -8,14 +8,14 @@ export const Center = styled.div`
   width: 100vw;
 `;
 
-export const CenterHorizontal = styled.div`
+export const HCenter = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
   width: 100%;
 `;
 
-export const CenterVertical = styled.div`
+export const VCenter = styled.div`
   display: flex;
   align-items: center;
   height: 100%;

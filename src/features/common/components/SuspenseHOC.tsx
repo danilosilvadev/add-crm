@@ -1,5 +1,16 @@
 import { Suspense } from "react";
 
-export const SuspenseHOC = (props: any) => (
-  <Suspense fallback={<div>Loading...</div>}>{props.children}</Suspense>
-);
+const Fallback = () => <div>Loading...</div>;
+
+interface IProps {
+  loading: boolean;
+  children: React.ReactNode;
+}
+
+export const SuspenseHOC = ({ loading, children }: IProps) => {
+  return (
+    <Suspense fallback={Fallback()}>
+      {loading ? <Fallback /> : <>{children}</>}
+    </Suspense>
+  );
+};

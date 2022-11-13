@@ -1,12 +1,19 @@
-import { SuspenseHOC } from "./components/SuspenseHOC";
-import { Center, CenterHorizontal, CenterVertical, Input } from "./components";
+import {
+  Center,
+  VCenter,
+  HCenter,
+  Input,
+  SuspenseHOC,
+  ErrorBoundaryHOC,
+} from "./components";
 import { useForm, useApi } from "./hooks";
 
 export const Common = {
   SuspenseHOC,
+  ErrorBoundaryHOC,
   Center,
-  CenterHorizontal,
-  CenterVertical,
+  VCenter,
+  HCenter,
   Input,
   useForm,
   useApi,

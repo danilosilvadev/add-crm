@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { IStyledTheme, ITheme, request } from "@config";
+import { IStyledTheme } from "@config";
 import { Common } from "@common";
 import * as yup from "yup";
+import { requests } from "../services";
 
 interface IForm {
   email: string;
@@ -18,53 +19,53 @@ const schema = yup.object().shape({
   email: yup.string().email("Not valid email").required("Email is required"),
   nationalId: yup
     .number()
-    .min(7, "Put seven numbers")
-    .max(7, "Put 7 numbers")
+    .min(3, "Put 3 numbers")
     .required("National ID is required"),
 });
 
 export const Dashboard = () => {
   const { register, handleSubmitForm, formData } = Common.useForm({ schema });
 
-  useEffect(() => {
-    request.get("/lead/123").then((res) => {
-      console.log(res);
-    });
-  }, []);
+  const [handleLeadService, leadResponse, leadError, leadLoading] =
+    Common.useApi();
 
-  console.log(formData, "aqui e ali");
+  useEffect(() => {}, [leadResponse, leadError]);
 
-  const handleSubmit = (data: IForm | unknown) => {
-    console.log(data);
+  const handleSubmit = (data: IForm | any) => {
+    handleLeadService(requests.getLead(data.nationalId));
   };
 
   return (
-    <Common.CenterVertical>
+    <Common.VCenter>
       <BG>
-        <Form onSubmit={(e) => handleSubmitForm(handleSubmit, e)}>
-          <h1>Validate the lead</h1>
-          <Common.Input
-            register={register}
-            name="name"
-            label="Name:"
-            placeholder="Write your name here"
-          />
-          <Common.Input
-            register={register}
-            name="email"
-            label="Email:"
-            placeholder="Write your email here"
-          />
-          <Common.Input
-            register={register}
-            name="nationalId"
-            label="National ID:"
-            placeholder="Write your national ID here"
-          />
-          <Button type="submit">Submit</Button>
-        </Form>
+        <Common.ErrorBoundaryHOC error={leadError}>
+          <Common.SuspenseHOC loading={leadLoading}>
+            <Form onSubmit={(e) => handleSubmitForm(handleSubmit, e)}>
+              <h1>Validate the lead</h1>
+              <Common.Input
+                register={register}
+                name="name"
+                label="Name:"
+                placeholder="Write your name here"
+              />
+              <Common.Input
+                register={register}
+                name="email"
+                label="Email:"
+                placeholder="Write your email here"
+              />
+              <Common.Input
+                register={register}
+                name="nationalId"
+                label="National ID:"
+                placeholder="Write your national ID here"
+              />
+              <Button type="submit">Submit</Button>
+            </Form>
+          </Common.SuspenseHOC>
+        </Common.ErrorBoundaryHOC>
       </BG>
-    </Common.CenterVertical>
+    </Common.VCenter>
   );
 };
 
@@ -86,6 +87,7 @@ const BG = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 const Button = styled.button`

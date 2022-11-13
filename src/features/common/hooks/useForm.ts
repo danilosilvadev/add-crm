@@ -25,7 +25,9 @@ export const useForm = ({ initialState = {}, schema = {} }: any) => {
     event.preventDefault();
     setSubmitTouched(true);
     handleValidation();
-    return callback(formData);
+    if (Object.keys(errors).length === 0 && Object.keys(formData).length > 0) {
+      return callback(formData);
+    }
   };
 
   const handleValidation = () => {
