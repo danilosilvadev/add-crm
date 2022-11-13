@@ -1,43 +1,66 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { request } from "@config";
+import { IStyledTheme, ITheme, request } from "@config";
 import { Common } from "@common";
+import * as yup from "yup";
 
-const theme = {
-  colors: {
-    primary: "#0070f3",
-    secondary: "#ff0070",
-    lightGrey: "#f5f5f5",
-    darkGrey: "#333",
-    white: "#fff",
-    black: "#000",
-  },
-};
+interface IForm {
+  email: string;
+  name: string;
+  nationalId: string;
+}
+
+const schema = yup.object().shape({
+  name: yup
+    .string()
+    .min(5, "put at least 5 letters")
+    .required("Name is required"),
+  email: yup.string().email("Not valid email").required("Email is required"),
+  nationalId: yup
+    .number()
+    .min(7, "Put seven numbers")
+    .max(7, "Put 7 numbers")
+    .required("National ID is required"),
+});
 
 export const Dashboard = () => {
+  const { register, handleSubmitForm, formData } = Common.useForm({ schema });
+
   useEffect(() => {
     request.get("/lead/123").then((res) => {
       console.log(res);
     });
   }, []);
 
+  console.log(formData, "aqui e ali");
+
+  const handleSubmit = (data: IForm | unknown) => {
+    console.log(data);
+  };
+
   return (
     <Common.CenterVertical>
       <BG>
-        <Form>
+        <Form onSubmit={(e) => handleSubmitForm(handleSubmit, e)}>
           <h1>Validate the lead</h1>
-          <Label htmlFor="name">
-            Name:
-            <Input type="text" name="name" />
-          </Label>
-          <Label htmlFor="email">
-            E-mail:
-            <Input type="text" name="email" />
-          </Label>
-          <Label htmlFor="nationalId">
-            National ID:
-            <Input type="text" name="nationalId" />
-          </Label>
+          <Common.Input
+            register={register}
+            name="name"
+            label="Name:"
+            placeholder="Write your name here"
+          />
+          <Common.Input
+            register={register}
+            name="email"
+            label="Email:"
+            placeholder="Write your email here"
+          />
+          <Common.Input
+            register={register}
+            name="nationalId"
+            label="National ID:"
+            placeholder="Write your national ID here"
+          />
           <Button type="submit">Submit</Button>
         </Form>
       </BG>
@@ -48,15 +71,16 @@ export const Dashboard = () => {
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 60%;
+  max-width: 40rem;
   margin-left: 1rem;
-  border: 2px solid ${theme.colors.primary};
+  border: ${({ theme }: IStyledTheme) => `2px solid ${theme.colors.primary}`};
   border-radius: 0.5rem;
   padding: 1rem;
 `;
 
 const BG = styled.div`
-  background-color: ${theme.colors.lightGrey};
+  background-color: ${({ theme }: IStyledTheme) => theme.colors.lightGrey};
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -64,28 +88,12 @@ const BG = styled.div`
   align-items: center;
 `;
 
-const Label = styled.label`
-  display: block;
-  margin-bottom: 0.5rem;
-  color: grey;
-  font-size: 1.5rem;
-`;
-
-const Input = styled.input`
-  display: block;
-  margin: 1rem 0;
-  width: 100%;
-  height: 2rem;
-  border-radius: 0.3rem;
-  border: 1px solid ${theme.colors.darkGrey};
-`;
-
 const Button = styled.button`
   display: block;
   margin-bottom: 1rem;
   width: 100%;
-  background-color: ${theme.colors.primary};
-  color: ${theme.colors.white};
+  background-color: ${({ theme }: IStyledTheme) => theme.colors.primary};
+  color: ${({ theme }: IStyledTheme) => theme.colors.white};
   border: none;
   border-radius: 0.3rem;
   height: 2rem;

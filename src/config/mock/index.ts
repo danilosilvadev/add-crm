@@ -52,7 +52,7 @@ export function makeServer({ environment = "test" } = {}) {
           return new Response(
             404,
             { some: "header" },
-            { errors: ["User not found"] }
+            { errors: ["Lead not found"] }
           );
         }
       });
