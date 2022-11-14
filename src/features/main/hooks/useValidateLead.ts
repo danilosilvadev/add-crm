@@ -22,7 +22,7 @@ export const useValidateLead = () => {
         handleValidationCase({ errorMessage: errorMessagesSchema.score });
         break;
       default:
-        handleValidationCase({ success: true });
+        handleValidationCase({ leadResponse, success: true });
     }
   };
 

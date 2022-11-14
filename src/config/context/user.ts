@@ -1,13 +1,10 @@
 import { createContext, Dispatch, SetStateAction } from "react";
+import { ILead } from "../mock/types";
 
-export const defaultUser = {
-  id: 0,
-};
+export const defaultUser = {};
 
 export interface IUser {
-  user: {
-    id: number;
-  };
+  user: ILead | unknown;
   setUser: Dispatch<SetStateAction<IUser["user"]>>;
 }
 

@@ -3,7 +3,7 @@ import * as yup from "yup";
 export const leadFormSchema = yup.object().shape({
   name: yup
     .string()
-    .min(5, "put at least 5 letters")
+    .min(3, "put at least 3 letters")
     .required("Name is required"),
   email: yup.string().email("Not valid email").required("Email is required"),
   nationalId: yup

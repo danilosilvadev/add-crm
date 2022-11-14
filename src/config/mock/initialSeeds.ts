@@ -15,7 +15,7 @@ export const initialSeeds: ISeeds = {
     },
     {
       name: "Alice",
-      email: "alice@alice",
+      email: "alice@alice.com",
       nationalId: 456,
       score: 10,
     },

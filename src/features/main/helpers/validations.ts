@@ -1,26 +1,13 @@
-import { ILead } from "@config";
-import { ILeadLegal } from "../../../config/mock/types";
+import { ILead, ILeadLegal } from "@config";
 
 export const validations = {
   identity: (lead: ILead, leadForm: ILead) => {
-    if (lead && lead.name === leadForm.name && lead.email === leadForm.email) {
-      return true;
-    } else {
-      return false;
-    }
+    return lead.name === leadForm.name && lead.email === leadForm.email;
   },
   legal: (leadLegal: ILeadLegal) => {
-    if (leadLegal && leadLegal.status === "non-defaulter") {
-      return true;
-    } else {
-      return false;
-    }
+    return leadLegal && leadLegal.status === "non-defaulter";
   },
   score: (lead: ILead) => {
-    if (lead && lead.score > 60) {
-      return true;
-    } else {
-      return false;
-    }
+    return lead && lead.score > 60;
   },
 };

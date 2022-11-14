@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { ILead, IStyledTheme } from "@config";
 import { Common } from "@common";
 import { requests } from "../services";
-import { handleValidations, leadFormSchema } from "../helpers";
+import { leadFormSchema } from "../helpers";
 import { useValidateLead } from "../hooks";
+import { Button, BG } from "../components";
 
 interface IForm {
   email: string;
@@ -34,7 +35,11 @@ export const Dashboard = () => {
 
   useEffect(() => {
     if (leadResponse && leadLegalResponse) {
-      handleValidations(leadResponse, leadLegalResponse, formData as ILead);
+      handleValidations(
+        leadResponse.lead,
+        leadLegalResponse.leadLegal,
+        formData as ILead
+      );
     }
   }, [leadResponse]);
 
@@ -87,29 +92,6 @@ const Form = styled.form`
   border: ${({ theme }: IStyledTheme) => `2px solid ${theme.colors.primary}`};
   border-radius: 0.5rem;
   padding: 1rem;
-`;
-
-const BG = styled.div`
-  background-color: ${({ theme }: IStyledTheme) => theme.colors.lightGrey};
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const Button = styled.button`
-  display: block;
-  margin: 1rem 0;
-  width: 100%;
-  background-color: ${({ theme }: IStyledTheme) => theme.colors.primary};
-  color: ${({ theme }: IStyledTheme) => theme.colors.white};
-  border: none;
-  border-radius: 0.3rem;
-  height: 2rem;
-  font-size: 1.5rem;
-  cursor: pointer;
 `;
 
 // 1. Comparar o id e info pessoais no RG central
