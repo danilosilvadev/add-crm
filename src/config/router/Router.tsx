@@ -1,20 +1,19 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
 import styled from "styled-components";
-import { features } from "../../features";
-
-const {
-  main: {
-    screens: { Dashboard, LeadStatus },
-  },
-} = features;
+import { routes } from "./routes";
 
 export const Router = () => {
   return (
     <Center>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/lead-status" element={<LeadStatus />} />
+        {routes.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            element={<route.Component />}
+          />
+        ))}
         <Route path="*" element={<div>Not Found</div>} />
       </Routes>
     </Center>

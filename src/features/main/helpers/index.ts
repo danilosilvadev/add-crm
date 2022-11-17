@@ -1,2 +1,6 @@
 export { validations } from "./validations";
-export { leadFormSchema, errorMessagesSchema } from "./schemas";
+export {
+  leadFormSchema,
+  errorMessagesSchema,
+  leadFormValidationErrorSchema,
+} from "./schemas";

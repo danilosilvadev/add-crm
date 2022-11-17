@@ -1,4 +1,4 @@
-export { AppProvider } from "./AppProvider";
+export { Providers } from "./providers";
 export { request } from "./axiosConfig";
 export { makeServer } from "./mock";
 export { theme } from "./theme";

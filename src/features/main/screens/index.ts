@@ -1,2 +1,2 @@
-export { Dashboard } from "./Dashboard";
+export { LeadValidation } from "./LeadValidation";
 export { LeadStatus } from "./LeadStatus";

@@ -7,7 +7,7 @@ export const useApi = () => {
   const [loading, setloading] = useState<boolean>(false);
 
   const handleRequest = (service: AxiosPromise) => {
-    setError("");
+    if (error) setError("");
     setloading(true);
     return service
       .then((res: AxiosResponse<unknown>) => {

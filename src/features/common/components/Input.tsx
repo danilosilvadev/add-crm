@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-interface IRegister {
-  errors: any;
-  formData: any;
-}
-
 interface IProps {
   name: string;
   label: string;
@@ -35,7 +30,7 @@ export const Input = (props: IProps) => {
         {...rest}
       />
       {name in errors ? (
-        <Label data-test-id="error-message" error={name in errors}>
+        <Label data-testid={`dti-error-message-${name}`} error={name in errors}>
           {errors?.[name as keyof typeof errors]}
         </Label>
       ) : null}

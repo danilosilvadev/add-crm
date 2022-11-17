@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useForm = ({ initialState = {}, schema = {} }: any) => {
-  const [formData, setFormData] = useState<{ [key: string]: string | unknown }>(
+  const [formData, setFormData] = useState<{ [key: string]: string }>(
     initialState
   );
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -34,7 +34,7 @@ export const useForm = ({ initialState = {}, schema = {} }: any) => {
     schema
       .validate(formData, { abortEarly: false })
       .then((valid: boolean) => {
-        setErrors({});
+        if (Object.keys(errors).length !== 0) setErrors({});
       })
       .catch(async (error: any) => {
         const errors: { [key: string]: string } = {};
