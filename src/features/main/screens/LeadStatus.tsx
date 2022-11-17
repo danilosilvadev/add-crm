@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { IStyledTheme, UserContext } from "@config";
+import { ILead, IStyledTheme, UserContext, IUser } from "@config";
 import { Common } from "@common";
 import { Button, Container } from "../components";
 import { useNavigate } from "react-router";
@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 export const LeadStatus = () => {
   // TODO: resolve typescript error
-  const { user }: { user: any } = useContext(UserContext);
+  const { user }: IUser = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleRestartValidation = () => {
@@ -20,7 +20,7 @@ export const LeadStatus = () => {
         {user.success ? (
           <ValidLead {...user} />
         ) : (
-          <InvalidLead error={user.error} />
+          <InvalidLead error={user.error || ""} />
         )}
         <Button onClick={handleRestartValidation}>Restart validation</Button>
       </Container>
@@ -28,7 +28,7 @@ export const LeadStatus = () => {
   );
 };
 
-const ValidLead = (props: any) => {
+const ValidLead = (props: ILead) => {
   return (
     <Flex>
       <section>
@@ -56,7 +56,7 @@ const Flex = styled.section`
   justify-content: space-between;
 `;
 
-const InvalidLead = (props) => {
+const InvalidLead = (props: { error: string }) => {
   return (
     <main>
       <ErrorMessage>Invalid Lead</ErrorMessage>
