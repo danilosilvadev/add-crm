@@ -43,7 +43,6 @@ describe("Main module hooks tests", () => {
       },
       waitFor,
     } = renderHook(useValidateLead, { wrapper: Wrapper });
-    console.log(current);
     handleValidations(
       mocks.mockLead,
       mocks.mockLegalLeadNonDefaulter,

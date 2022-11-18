@@ -1,19 +1,22 @@
 import { MemoryRouter, Route, Routes } from "react-router";
 import { ThemeProvider } from "styled-components";
 import { UserContext } from "../context";
-import { routes } from "../router";
+import { defaultUser, IUser } from "../context/user";
 import { theme } from "../theme";
 
-const LeadValidation = routes[0].Component;
-const LeadStatus = routes[1].Component;
-
-export const TestProvider = ({ children }: { children: any }) => (
-  <UserContext.Provider value={{ user: {}, setUser: () => {} }}>
+export const TestProvider = ({
+  children,
+  initialState,
+}: {
+  children: any;
+  initialState?: IUser["user"];
+}) => (
+  <UserContext.Provider
+    value={{ user: initialState || defaultUser, setUser: () => {} }}
+  >
     <ThemeProvider theme={theme}>
       <MemoryRouter initialEntries={["/"]}>
         <Routes>
-          <Route path={routes[0].path} element={<LeadValidation />} />
-          <Route path={routes[1].path} element={<LeadStatus />} />
           <Route path="*" element={children} />
         </Routes>
       </MemoryRouter>

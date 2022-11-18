@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LeadValidation screen tests should test the snapshot of the lead validation screen 1`] = `
+exports[`LeadStatus screen tests should test the snapshot of lead status screen 1`] = `
 {
   "debug": [Function],
   "findAllByAltText": [Function],

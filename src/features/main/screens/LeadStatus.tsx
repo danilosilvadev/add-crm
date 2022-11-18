@@ -6,7 +6,6 @@ import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 export const LeadStatus = () => {
-  // TODO: resolve typescript error
   const { user }: IUser = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -16,7 +15,7 @@ export const LeadStatus = () => {
 
   return (
     <Common.Center>
-      <Container width="40rem" border>
+      <Container width="40rem" border data-testid="dti-lead-status">
         {user.success ? (
           <ValidLead {...user} />
         ) : (
@@ -46,7 +45,7 @@ const ValidLead = (props: ILead) => {
           <Info>{props.nationalId}</Info>
         </Flex>
       </section>
-      <Score>Score: {props.score}</Score>
+      <Score data-testid="dti-lead-status-score">Score: {props.score}</Score>
     </Flex>
   );
 };
@@ -60,7 +59,9 @@ const InvalidLead = (props: { error: string }) => {
   return (
     <main>
       <ErrorMessage>Invalid Lead</ErrorMessage>
-      <ErrorMessage>{props.error}</ErrorMessage>
+      <ErrorMessage data-testid="dti-lead-status-invalid-message">
+        {props.error}
+      </ErrorMessage>
     </main>
   );
 };

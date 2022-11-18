@@ -1,4 +1,10 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  renderHook,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import { Providers } from "@config";
 import { LeadValidation } from "../LeadValidation";
 import "@testing-library/jest-dom";
@@ -31,11 +37,11 @@ describe("LeadValidation screen tests", () => {
     fireEvent.click(screen.getByTestId("dti-lead-validation-submit"));
   };
 
-  it("should render the lead validation screen", () => {
+  it("should test the snapshot of the lead validation screen", () => {
     expect(screen).toMatchSnapshot();
   });
 
-  it("should test the lead validation form", () => {
+  it("should test the lead validation form render", () => {
     expect(screen.getByTestId("dti-lead-validation")).toBeInTheDocument();
   });
 

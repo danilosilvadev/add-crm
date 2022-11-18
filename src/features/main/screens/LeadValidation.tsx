@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { ILead, IStyledTheme } from "@config";
+import { IStyledTheme } from "@config";
 import { Common } from "@common";
 import { requests } from "../services";
 import { leadFormSchema } from "../helpers";
@@ -38,7 +38,7 @@ export const LeadValidation = () => {
       handleValidations(
         leadResponse.lead,
         leadLegalResponse.leadLegal,
-        formData as ILead
+        formData as any
       );
     }
   }, [leadResponse]);
