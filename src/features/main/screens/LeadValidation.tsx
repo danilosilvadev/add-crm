@@ -57,21 +57,21 @@ export const LeadValidation = () => {
         >
           <Form onSubmit={(e) => handleSubmitForm(handleSubmit, e)}>
             <h1 data-testid="dti-lead-validation">Validate the lead</h1>
-            <Common.Input
+            <Common.ControlledInput
               register={register}
               name="name"
               label="Name:"
               data-testid="dti-lead-validation-name"
               placeholder="Write your name here"
             />
-            <Common.Input
+            <Common.ControlledInput
               register={register}
               name="email"
               label="Email:"
               data-testid="dti-lead-validation-email"
               placeholder="Write your email here"
             />
-            <Common.Input
+            <Common.ControlledInput
               register={register}
               name="nationalId"
               label="National ID:"

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668774818703" clover="3.2.0">
-  <project timestamp="1668774818704" name="All files">
+<coverage generated="1668780095559" clover="3.2.0">
+  <project timestamp="1668780095559" name="All files">
     <metrics statements="197" coveredstatements="147" conditionals="68" coveredconditionals="42" methods="69" coveredmethods="47" elements="334" coveredelements="236" complexity="0" loc="197" ncloc="197" packages="16" files="43" classes="43"/>
     <package name="config">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="axiosConfig.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/axiosConfig.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/index.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="theme.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/theme.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="23" count="3" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
       </file>
     </package>
     <package name="config.context">
       <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="UserProvider.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/context/UserProvider.tsx">
         <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
@@ -31,33 +31,33 @@
       </file>
       <file name="user.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/context/user.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
       </file>
     </package>
     <package name="config.mock">
       <metrics statements="28" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="8" coveredmethods="0"/>
       <file name="controllers.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/mock/controllers.ts">
         <metrics statements="14" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="5" count="3" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="9" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="15" count="3" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="21" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/mock/index.ts">
         <metrics statements="13" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
@@ -72,74 +72,74 @@
       </file>
       <file name="initialSeeds.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/mock/initialSeeds.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="8" count="3" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
       </file>
     </package>
     <package name="config.providers">
       <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="1"/>
       <file name="AppProvider.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/providers/AppProvider.tsx">
         <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="7" count="3" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
       </file>
       <file name="TestProvider.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/providers/TestProvider.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="14" count="12" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="14" count="16" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/providers/index.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
     </package>
     <package name="config.router">
       <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="Router.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/router/Router.tsx">
         <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="6" count="3" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/router/index.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="routes.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/config/router/routes.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="3" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
       </file>
     </package>
     <package name="features.common">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/index.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="13" count="3" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
       </file>
     </package>
     <package name="features.common.components">
       <metrics statements="15" coveredstatements="15" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="6"/>
       <file name="Center.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/components/Center.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="19" count="3" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
       </file>
       <file name="Input.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/components/Input.tsx">
         <metrics statements="8" coveredstatements="8" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="18" count="63" type="stmt"/>
-        <line num="19" count="63" type="stmt"/>
-        <line num="25" count="6" type="stmt"/>
-        <line num="41" count="3" type="stmt"/>
-        <line num="42" count="75" type="cond" truecount="2" falsecount="0"/>
-        <line num="45" count="3" type="stmt"/>
-        <line num="51" count="63" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="19" count="67" type="stmt"/>
+        <line num="20" count="67" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="47" count="80" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="4" type="stmt"/>
+        <line num="56" count="67" type="cond" truecount="2" falsecount="0"/>
       </file>
       <file name="Spinner.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/components/Spinner.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="5" count="23" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/components/index.ts">
@@ -150,7 +150,7 @@
       <metrics statements="13" coveredstatements="9" conditionals="6" coveredconditionals="5" methods="6" coveredmethods="3"/>
       <file name="DataFetchingHOC.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/components/HOC/DataFetchingHOC.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="10" count="3" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
         <line num="11" count="22" type="stmt"/>
       </file>
       <file name="ErrorBoundaryHOC.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/components/HOC/ErrorBoundaryHOC.tsx">
@@ -161,13 +161,13 @@
         <line num="24" count="21" type="cond" truecount="3" falsecount="1"/>
         <line num="25" count="0" type="stmt"/>
         <line num="33" count="21" type="stmt"/>
-        <line num="37" count="3" type="stmt"/>
+        <line num="37" count="4" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
       </file>
       <file name="SuspenseHOC.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/components/HOC/SuspenseHOC.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
         <line num="12" count="22" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/components/HOC/index.ts">
@@ -181,7 +181,7 @@
       </file>
       <file name="useApi.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/hooks/useApi.ts">
         <metrics statements="15" coveredstatements="9" conditionals="4" coveredconditionals="1" methods="5" coveredmethods="2"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="5" count="44" type="stmt"/>
         <line num="6" count="44" type="stmt"/>
         <line num="7" count="44" type="stmt"/>
@@ -199,7 +199,7 @@
       </file>
       <file name="useForm.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/common/hooks/useForm.ts">
         <metrics statements="27" coveredstatements="25" conditionals="10" coveredconditionals="6" methods="10" coveredmethods="9"/>
-        <line num="3" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="3" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="4" count="22" type="stmt"/>
         <line num="7" count="22" type="stmt"/>
         <line num="8" count="22" type="stmt"/>
@@ -232,25 +232,25 @@
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/index.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="3" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
       </file>
     </package>
     <package name="features.main.components">
       <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="3" methods="6" coveredmethods="6"/>
       <file name="BG.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/components/BG.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="5" count="22" type="stmt"/>
       </file>
       <file name="Button.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/components/Button.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="3" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="8" count="26" type="stmt"/>
         <line num="9" count="26" type="stmt"/>
       </file>
       <file name="Container.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/components/Container.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="3" methods="3" coveredmethods="3"/>
-        <line num="10" count="3" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
         <line num="13" count="5" type="cond" truecount="1" falsecount="1"/>
         <line num="14" count="5" type="cond" truecount="1" falsecount="1"/>
         <line num="17" count="5" type="cond" truecount="1" falsecount="1"/>
@@ -266,14 +266,14 @@
       </file>
       <file name="schemas.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/helpers/schemas.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
       </file>
       <file name="validations.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/helpers/validations.ts">
         <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
-        <line num="3" count="4" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
         <line num="5" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="8" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="3" type="cond" truecount="2" falsecount="0"/>
@@ -286,7 +286,7 @@
       </file>
       <file name="useValidateLead.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/hooks/useValidateLead.ts">
         <metrics statements="16" coveredstatements="10" conditionals="8" coveredconditionals="3" methods="3" coveredmethods="3"/>
-        <line num="6" count="3" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
         <line num="7" count="23" type="stmt"/>
         <line num="8" count="23" type="stmt"/>
         <line num="9" count="23" type="stmt"/>
@@ -320,29 +320,29 @@
       <metrics statements="34" coveredstatements="32" conditionals="12" coveredconditionals="8" methods="13" coveredmethods="12"/>
       <file name="LeadStatus.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/screens/LeadStatus.tsx">
         <metrics statements="19" coveredstatements="18" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="7"/>
-        <line num="8" count="3" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
         <line num="9" count="5" type="stmt"/>
         <line num="10" count="5" type="stmt"/>
         <line num="12" count="5" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="16" count="5" type="stmt"/>
-        <line num="30" count="3" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="53" count="3" type="stmt"/>
-        <line num="58" count="3" type="stmt"/>
+        <line num="53" count="4" type="stmt"/>
+        <line num="58" count="4" type="stmt"/>
         <line num="59" count="4" type="stmt"/>
-        <line num="69" count="3" type="stmt"/>
+        <line num="69" count="4" type="stmt"/>
         <line num="70" count="8" type="stmt"/>
-        <line num="73" count="3" type="stmt"/>
+        <line num="73" count="4" type="stmt"/>
         <line num="78" count="3" type="stmt"/>
-        <line num="81" count="3" type="stmt"/>
+        <line num="81" count="4" type="stmt"/>
         <line num="87" count="4" type="stmt"/>
-        <line num="90" count="3" type="stmt"/>
+        <line num="90" count="4" type="stmt"/>
         <line num="98" count="1" type="stmt"/>
       </file>
       <file name="LeadValidation.tsx" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/screens/LeadValidation.tsx">
         <metrics statements="15" coveredstatements="14" conditionals="8" coveredconditionals="5" methods="5" coveredmethods="5"/>
-        <line num="16" count="3" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
         <line num="18" count="22" type="stmt"/>
         <line num="24" count="22" type="stmt"/>
         <line num="31" count="22" type="stmt"/>
@@ -355,7 +355,7 @@
         <line num="48" count="1" type="stmt"/>
         <line num="51" count="22" type="stmt"/>
         <line num="58" count="5" type="stmt"/>
-        <line num="91" count="3" type="stmt"/>
+        <line num="91" count="4" type="stmt"/>
         <line num="97" count="21" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/screens/index.ts">
@@ -369,7 +369,7 @@
       </file>
       <file name="lead.ts" path="/home/danilosilvadev/dev/interview-tests/addi-crm/src/features/main/services/lead.ts">
         <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="3" count="3" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="9" count="1" type="stmt"/>

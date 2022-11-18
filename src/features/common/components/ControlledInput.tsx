@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ITheme } from "@config";
 
 interface IProps {
   name: string;
@@ -7,7 +8,7 @@ interface IProps {
   register: any;
 }
 
-export const Input = (props: IProps) => {
+export const ControlledInput = (props: IProps) => {
   const {
     name,
     label,
@@ -18,8 +19,11 @@ export const Input = (props: IProps) => {
   } = props;
   return (
     <>
-      <Label error={name in errors}>{label}</Label>
+      <Label data-testid="dti-controlled-input-label" error={name in errors}>
+        {label}
+      </Label>
       <TextInput
+        data-testid="dti-controlled-input"
         {...register}
         onChange={(e) => {
           register.onChange(name)(e.target.value);
@@ -39,7 +43,8 @@ export const Input = (props: IProps) => {
 };
 
 const Label = styled.label`
-  color: ${(props: { error: boolean }) => (props.error ? "red" : "grey")};
+  color: ${(props: { theme: ITheme; error: boolean }) =>
+    props.error ? props.theme.colors.error : "grey"};
 `;
 
 const TextInput = styled.input`
@@ -47,6 +52,6 @@ const TextInput = styled.input`
   margin: 1rem 0;
   height: 2rem;
   border-radius: 0.3rem;
-  border: ${({ theme, error }: { theme: any; error: boolean }) =>
+  border: ${({ theme, error }: { theme: ITheme; error: boolean }) =>
     `1px solid ${error ? theme.colors.error : theme.colors.darkGrey}`};
 `;
