@@ -23,7 +23,7 @@ export const initialSeeds: ISeeds = {
       name: "John",
       email: "john@john.com",
       nationalId: 789,
-      score: 70,
+      score: 40,
     },
   ],
   leadsLegal: [

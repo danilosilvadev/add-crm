@@ -1,62 +1,28 @@
-import { ILead, ILeadLegal, UserContext } from "@config";
+import { Providers } from "@config";
 import { useValidateLead } from "../useValidateLead";
-import { act, cleanup, renderHook } from "@testing-library/react-hooks";
-import {
-  render,
-  screen as page,
-  waitForElementToBeRemoved,
-} from "@testing-library/react";
-import { MemoryRouter, Route, Routes } from "react-router";
+import { cleanup, renderHook } from "@testing-library/react-hooks";
 import * as Router from "react-router";
-import { mocks } from "./mocks";
 import "@testing-library/jest-dom/extend-expect";
 import "@testing-library/jest-dom";
 
-const navigate = jest.fn();
+let navigateSpy: jest.SpyInstance;
 
 beforeEach(() => {
-  jest.spyOn(Router, "useNavigate").mockImplementation(() => navigate);
+  navigateSpy = jest.spyOn(Router, "useNavigate");
 });
 
 afterEach(cleanup);
 
-describe("Main module hooks tests", () => {
-  it("should return the correct value", () => {
-    act(() => {
-      /* fire events that update state */
-    });
-
-    const Wrapper = ({ children }: { children: any }) => (
-      <UserContext.Provider value={{ user: {}, setUser: () => {} }}>
-        <MemoryRouter initialEntries={["/"]}>
-          <Routes>
-            <Route path="*" element={<>{children}</>} />
-            <Route path="/lead-status" element={<div>lead status</div>} />
-          </Routes>
-        </MemoryRouter>
-      </UserContext.Provider>
-    );
+describe("useValidateLead hook tests", () => {
+  it("should test if after handleValidations is called useNavigate is called", () => {
     const {
       result: {
         current: { handleValidations },
-        current,
       },
-      waitFor,
-    } = renderHook(useValidateLead, { wrapper: Wrapper });
-    handleValidations(
-      mocks.mockLead,
-      mocks.mockLegalLeadNonDefaulter,
-      mocks.mockLead
-    );
-    // waitForElementToBeRemoved(() => page.getByText("Validate the lead"), {
-    //   timeout: 1000,
-    // });
+    } = renderHook(useValidateLead, { wrapper: Providers.TestProvider });
 
     expect(handleValidations).toBeDefined();
-    // expect(page.getByTestId("dti-lead-validation")).toBeInTheDocument();
-    //  expect(resultExpense).toHaveLength(1);
-    // const { handleValidations } = useValidateLead();
-    // expect(handleValidations(mockLead, mockLegalLead, mockLead)).toBe("test");
-    expect(true).toBe(true);
+
+    expect(navigateSpy).toHaveBeenCalled();
   });
 });

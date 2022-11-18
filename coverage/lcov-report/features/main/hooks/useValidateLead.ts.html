@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">37.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/16</span>
+                <span class='fraction'>6/16</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/8</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">33.33% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">37.5% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>3/8</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/16</span>
+                <span class='fraction'>6/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -115,7 +115,9 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,9 +130,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -139,7 +138,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,13 +160,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">23x</span>
@@ -175,23 +179,25 @@ import { errorMessagesSchema, validations } from "../helpers";
 export const useValidateLead = () =&gt; {
   const navigate = useNavigate();
   const { setUser } = useContext(UserContext);
-  const handleValidations = (
+  const handleValidations = <span class="fstat-no" title="function not covered" >(</span>
     leadResponse: ILead,
     leadLegalResponse: ILeadLegal,
     formData: ILead
   ) =&gt; {
-    switch (true) {
-<span class="branch-0 cbranch-no" title="branch not covered" >      case !validations.identity(leadResponse, formData as ILead):</span>
+<span class="cstat-no" title="statement not covered" >    switch (true) {</span>
+      case !validations.identity(leadResponse, formData as ILead):
 <span class="cstat-no" title="statement not covered" >        handleValidationCase({ errorMessage: errorMessagesSchema.identity });</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
-<span class="branch-1 cbranch-no" title="branch not covered" >      case !validations.legal(leadLegalResponse):</span>
+      case !validations.legal(leadLegalResponse):
 <span class="cstat-no" title="statement not covered" >        handleValidationCase({ errorMessage: errorMessagesSchema.legal });</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
-<span class="branch-2 cbranch-no" title="branch not covered" >      case !validations.score(leadResponse):</span>
-<span class="cstat-no" title="statement not covered" >        handleValidationCase({ errorMessage: errorMessagesSchema.score });</span>
+      case !validations.score(leadResponse):
+<span class="cstat-no" title="statement not covered" >        handleValidationCase({</span>
+          errorMessage: `${errorMessagesSchema.score}. Score: ${leadResponse.score} `,
+        });
 <span class="cstat-no" title="statement not covered" >        break;</span>
       default:
-        handleValidationCase({ leadResponse, success: true });
+<span class="cstat-no" title="statement not covered" >        handleValidationCase({ leadResponse, success: true });</span>
     }
   };
 &nbsp;
@@ -202,19 +208,19 @@ export const useValidateLead = () =&gt; {
     leadLegalResponse?: ILeadLegal | any;
   }
 &nbsp;
-  const handleValidationCase = ({
-    errorMessage = "",
+  const handleValidationCase = <span class="fstat-no" title="function not covered" >({</span>
+    errorMessage = <span class="branch-0 cbranch-no" title="branch not covered" >"",</span>
     success = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
     leadResponse = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span>
-    leadLegalResponse = {},
+    leadLegalResponse = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span>
   }: IHandleValidationCase) =&gt; {
-    setUser({
+<span class="cstat-no" title="statement not covered" >    setUser({</span>
       ...leadResponse,
       ...leadLegalResponse,
       error: errorMessage,
       success,
     });
-    navigate("/lead-status");
+<span class="cstat-no" title="statement not covered" >    navigate("/lead-status");</span>
   };
 &nbsp;
   return { handleValidations };
@@ -226,7 +232,7 @@ export const useValidateLead = () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-18T14:01:35.518Z
+                at 2022-11-18T18:34:18.208Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -98,17 +98,3 @@ const Form = styled.form`
   border-radius: 0.5rem;
   padding: 1rem;
 `;
-
-// 1. Comparar o id e info pessoais no RG central
-// The person should exist in the national registry identification external system
-// and their personal information should match the information stored in our
-// local database.
-
-// 2. ficha limpa
-// The person does not have any judicial records in the national archives'
-// external system.
-
-// 3. validador de nota de credito entre 0 e 100 e passa com 60
-// Our internal prospect qualification system gives a satisfactory score for that
-// person. This system outputs a random score between 0 and 100. A lead could
-// be turned into prospect if the score is greater than 60.

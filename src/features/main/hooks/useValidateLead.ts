@@ -19,7 +19,9 @@ export const useValidateLead = () => {
         handleValidationCase({ errorMessage: errorMessagesSchema.legal });
         break;
       case !validations.score(leadResponse):
-        handleValidationCase({ errorMessage: errorMessagesSchema.score });
+        handleValidationCase({
+          errorMessage: `${errorMessagesSchema.score}. Score: ${leadResponse.score} `,
+        });
         break;
       default:
         handleValidationCase({ leadResponse, success: true });
